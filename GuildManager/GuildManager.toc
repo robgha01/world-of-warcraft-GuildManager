@@ -1,19 +1,19 @@
-## Title: Guild Manager
+## Title: GuildManager
 ## Author: Yottabyte8472, Areasis
 ## Version: 7.1.0
 ## Interface: 70100
 ## Notes: This is a port of https://mods.curse.com/addons/wow/guild-management-system focused on restructuring and making the project readable!
-## X-Category: Guild
-## X-License: As-Is Free Use And Distribution
-## X-Curse-Packaged-Version: 7.1.0
-## X-Curse-Project-Name: GuildManager
-## X-Curse-Project-ID: guild-manager
-## X-Curse-Repository-ID: wow/guild-manager/mainline
 ## DefaultState: enabled
-## LoadOnDemand: 0
-## SavedVariables: GuildManagerDB
-## OptionalDeps: Ace3
 ## LoadManagers: AddonLoader
+## LoadOnDemand: 0
+## OptionalDeps: Ace3
+## SavedVariables: GuildManagerDB
+## X-Category: Guild
+## X-Curse-Packaged-Version: 7.1.0
+## X-Curse-Project-ID: guild-manager
+## X-Curse-Project-Name: GuildManager
+## X-Curse-Repository-ID: wow/guild-manager/mainline
+## X-License: As-Is Free Use And Distribution
 ## X-LoadOn-Guild: true
 ## X-LoadOn-Slash: /GuildManager, /gm
 #@no-lib-strip@
