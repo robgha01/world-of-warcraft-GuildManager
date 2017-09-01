@@ -51,9 +51,6 @@
     <Content Include="Frames\PruneExemptionListControlFrame.lua">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="Guild Manager.toc">
-      <SubType>TableOfContents</SubType>
-    </Content>
     <Content Include="GuildManager.toc">
       <SubType>TableOfContents</SubType>
     </Content>
