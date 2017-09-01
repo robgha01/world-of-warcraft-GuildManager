@@ -134,7 +134,7 @@ function GuildManager:OnInitialize()
     })
     if not GuildManager.version then GuildManager.version = tonumber(GetAddOnMetadata("GuildManager", "X-Build")) end
     GuildManager.optionsframe = LibStub("AceConfigDialog-3.0"):AddToBlizOptions("GuildManager", "Guild Manager")
-    LibStub("AceConfig-3.0"):RegisterOptionsTable("GuildManager", options)
+    LibStub("AceConfig-3.0"):RegisterOptionsTable("GuildManager", guildManagerOptions)
     if (GuildManager.db.profile.version ~= GuildManager.version) then
         GuildManager.db.profile.lasttime = {}
         GuildManager.db.profile.version = GuildManager.version

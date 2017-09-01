@@ -2,18 +2,18 @@
 -- Create Date : 9/1/2017 12:55:44 PM
 
 --Options Interface--
-local options = {
+guildManagerOptions = {
 	handler = GuildManager,
     type = 'group',
     childGroups = "tab",
 	args = {}
 }
 
-options.name = function(info)
+guildManagerOptions.name = function(info)
 	return "Guild Manager 7.1.0 By: Yottabyte"
 end
 
-options.args.gmheader = {
+guildManagerOptions.args.gmheader = {
 	type = 'header',
 	name = function(info)
 		if GuildManager:GetGuildName()~=nil then 
@@ -26,7 +26,7 @@ options.args.gmheader = {
 }
 
 --* Recruitment *--
-options.args.recruitment = {
+guildManagerOptions.args.recruitment = {
 	type = 'group',
 	name = "Recruitment",
 	desc = "Guild Recruitment Settings",
@@ -42,7 +42,7 @@ options.args.recruitment = {
 }
 
 --* Recruitment ZoneRecruitment *--
-options.args.recruitment.args.zonerecruitment = {
+guildManagerOptions.args.recruitment.args.zonerecruitment = {
 	type = 'group',
     name = "Zone Recruitment",
     desc = "Zone Recruitment Settings",
@@ -57,7 +57,7 @@ options.args.recruitment.args.zonerecruitment = {
 	args = {}
 }
 
-options.args.recruitment.args.zonerecruitment.args.cityspam = {
+guildManagerOptions.args.recruitment.args.zonerecruitment.args.cityspam = {
 	type = 'toggle',
     name = "CitySpam Enabled?",
     desc = "Should I spam in cities?",
@@ -77,7 +77,7 @@ options.args.recruitment.args.zonerecruitment.args.cityspam = {
     order = 1,
 }
 
-options.args.recruitment.args.zonerecruitment.args.zonespam = {
+guildManagerOptions.args.recruitment.args.zonerecruitment.args.zonespam = {
 	type = 'toggle',
     name = "ZoneSpam Enabled?",
     desc = "Should I spam in regular zones?",
@@ -97,7 +97,7 @@ options.args.recruitment.args.zonerecruitment.args.zonespam = {
     order = 2
 }
 
-options.args.recruitment.args.zonerecruitment.args.outpvpspam = {
+guildManagerOptions.args.recruitment.args.zonerecruitment.args.outpvpspam = {
 	type = 'toggle',
     name = "Outdoor PVP Zones Enabled?",
     desc = "Should I spam in outdoor pvp zones?",
@@ -117,7 +117,7 @@ options.args.recruitment.args.zonerecruitment.args.outpvpspam = {
     order = 3
 }
 
-options.args.recruitment.args.zonerecruitment.args.interval = {
+guildManagerOptions.args.recruitment.args.zonerecruitment.args.interval = {
 	type = 'range',
     name = "Interval",
     desc = "The amount of minutes between spammings in a particular location",
@@ -140,7 +140,7 @@ options.args.recruitment.args.zonerecruitment.args.interval = {
     order = 4
 }
 
-options.args.recruitment.args.zonerecruitment.args.lastspam = {
+guildManagerOptions.args.recruitment.args.zonerecruitment.args.lastspam = {
 	type = 'execute',
     name = "Last time spammed in zone",
     desc = "Spit out to chat the last time someone in this guild has spammed in this zone",
@@ -156,7 +156,7 @@ options.args.recruitment.args.zonerecruitment.args.lastspam = {
     order = 5
 }
 
-options.args.recruitment.args.zonerecruitment.args.manspam = {
+guildManagerOptions.args.recruitment.args.zonerecruitment.args.manspam = {
 	type = 'execute',
     name = "Manual Spam",
     desc = "Spams current zone",
@@ -177,7 +177,7 @@ options.args.recruitment.args.zonerecruitment.args.manspam = {
     order = 6
 }
 
-options.args.recruitment.args.zonerecruitment.args.msg = {
+guildManagerOptions.args.recruitment.args.zonerecruitment.args.msg = {
 	type = 'input',
     multiline = true,
     width = "full",
@@ -200,7 +200,7 @@ options.args.recruitment.args.zonerecruitment.args.msg = {
     order = 7
 }
 
-options.args.recruitment.args.zonerecruitment.args.citychannel = {
+guildManagerOptions.args.recruitment.args.zonerecruitment.args.citychannel = {
 	type = 'range',
     name = "City Channel Number",
     desc = "Lets you choose which channel number you would like to recruit on while in a city. NOTE: By default 1 will use General, 2 will use Trade but it varies depending on how you set up your chat channels.",
@@ -223,7 +223,7 @@ options.args.recruitment.args.zonerecruitment.args.citychannel = {
     order = 8
 }
 
-options.args.recruitment.args.zonerecruitment.args.zonechannel = {
+guildManagerOptions.args.recruitment.args.zonerecruitment.args.zonechannel = {
 	type = 'range',
     name = "Zone Channel Number",
     desc = "Lets you choose which channel number you would like to recruit on while in a general zone. NOTE: By default 1 will use General, 3 will use Local Defense but it varies depending on how you set up your chat channels.",
@@ -247,7 +247,7 @@ options.args.recruitment.args.zonerecruitment.args.zonechannel = {
 }
 
 --* Recruitment WhoRecruitment *--
-options.args.recruitment.args.whorecruitment = {
+guildManagerOptions.args.recruitment.args.whorecruitment = {
 	type = 'group',
     childGroups = "tab",
     name = "Toon Recruitment",
@@ -263,7 +263,7 @@ options.args.recruitment.args.whorecruitment = {
 	args = {}
 }
 
-options.args.recruitment.args.whorecruitment.args.runwho = {
+guildManagerOptions.args.recruitment.args.whorecruitment.args.runwho = {
 	type = 'execute',
     name = "Run Who Search",
     desc = "Begins searching for players. Character Recruitment uses the UI. UI elements such as the Mail Box, The Map, Character Stats, Achievments, etc. will close during the course of a cycle. It is recomended that you run this cycle if you plan to be AFK or doing something that doesnt require the UI as much. Raiding, Questing, etc.",
@@ -281,7 +281,7 @@ options.args.recruitment.args.whorecruitment.args.runwho = {
     end
 }
 
-options.args.recruitment.args.whorecruitment.args.automatewho = {
+guildManagerOptions.args.recruitment.args.whorecruitment.args.automatewho = {
 	type = 'toggle',
     name = "Automate",
     desc = "Search for players automatically & continuously.",
@@ -301,7 +301,7 @@ options.args.recruitment.args.whorecruitment.args.automatewho = {
     order = 2
 }
 
-options.args.recruitment.args.whorecruitment.args.iqcontrols = {
+guildManagerOptions.args.recruitment.args.whorecruitment.args.iqcontrols = {
 	type = 'execute',
     name = "Launch IQ Controls?",
     desc = "The Invite Queue is a list of ",
@@ -318,7 +318,7 @@ options.args.recruitment.args.whorecruitment.args.iqcontrols = {
     order = 3
 }
 
-options.args.recruitment.args.whorecruitment.args.targetclass = {
+guildManagerOptions.args.recruitment.args.whorecruitment.args.targetclass = {
 	type = 'toggle',
     name = "Target Specific Classes",
     desc = "Target specific classes when searching for players. Otherwise will target all classes.",
@@ -338,7 +338,7 @@ options.args.recruitment.args.whorecruitment.args.targetclass = {
     order = 4
 }
 
-options.args.recruitment.args.whorecruitment.args.whispmsg = {
+guildManagerOptions.args.recruitment.args.whorecruitment.args.whispmsg = {
 	type = 'input',
     multiline = true,
     width = "full",
@@ -361,7 +361,7 @@ options.args.recruitment.args.whorecruitment.args.whispmsg = {
     order = 5
 }
 
-options.args.recruitment.args.whorecruitment.args.minlevel = {
+guildManagerOptions.args.recruitment.args.whorecruitment.args.minlevel = {
 	type = 'range',
     name = "Minimum Level",
     desc = "The minimum level of people you are looking for (used when scanning Who Search results)",
@@ -388,7 +388,7 @@ options.args.recruitment.args.whorecruitment.args.minlevel = {
     order = 6
 }
 
-options.args.recruitment.args.whorecruitment.args.maxlevel = {
+guildManagerOptions.args.recruitment.args.whorecruitment.args.maxlevel = {
 	type = 'range',
     name = "Maximum Level",
     desc = "The maximum level of people you are looking for (used when scanning Who Search Results)",
@@ -415,7 +415,7 @@ options.args.recruitment.args.whorecruitment.args.maxlevel = {
     order = 7
 }
 
-options.args.recruitment.args.whorecruitment.args.classsettings = {
+guildManagerOptions.args.recruitment.args.whorecruitment.args.classsettings = {
 	type = 'group',
     name = "Class List",
     desc = "Select the classes you wish to target",
@@ -434,7 +434,7 @@ options.args.recruitment.args.whorecruitment.args.classsettings = {
 	args = {}
 }
 
-	options.args.recruitment.args.whorecruitment.args.classsettings.args.DKsearch = {
+	guildManagerOptions.args.recruitment.args.whorecruitment.args.classsettings.args.DKsearch = {
 		type = 'toggle',
         name = "Death Knight",
         desc = "Recruit Death Knights?",
@@ -454,7 +454,7 @@ options.args.recruitment.args.whorecruitment.args.classsettings = {
         order = 1
 	}
 	
-	options.args.recruitment.args.whorecruitment.args.classsettings.args.DHsearch = {
+	guildManagerOptions.args.recruitment.args.whorecruitment.args.classsettings.args.DHsearch = {
 		type = 'toggle',
         name = "Demon Hunter",
         desc = "Recruit Demon Hunters?",
@@ -474,7 +474,7 @@ options.args.recruitment.args.whorecruitment.args.classsettings = {
         order = 1
 	}
 	
-	options.args.recruitment.args.whorecruitment.args.classsettings.args.Druidsearch = {
+	guildManagerOptions.args.recruitment.args.whorecruitment.args.classsettings.args.Druidsearch = {
 		type = 'toggle',
         name = "Druid",
         desc = "Recruit Druids?",
@@ -494,7 +494,7 @@ options.args.recruitment.args.whorecruitment.args.classsettings = {
         order = 1
 	}
 	
-	options.args.recruitment.args.whorecruitment.args.classsettings.args.Huntersearch = {
+	guildManagerOptions.args.recruitment.args.whorecruitment.args.classsettings.args.Huntersearch = {
 		type = 'toggle',
         name = "Hunters",
         desc = "Recruit Hunters?",
@@ -514,7 +514,7 @@ options.args.recruitment.args.whorecruitment.args.classsettings = {
         order = 1
 	}
 	
-	options.args.recruitment.args.whorecruitment.args.classsettings.args.Magesearch = {
+	guildManagerOptions.args.recruitment.args.whorecruitment.args.classsettings.args.Magesearch = {
 		type = 'toggle',
         name = "Mage",
         desc = "Recruit Mages?",
@@ -534,7 +534,7 @@ options.args.recruitment.args.whorecruitment.args.classsettings = {
         order = 1
 	}
 	
-	options.args.recruitment.args.whorecruitment.args.classsettings.args.Monksearch = {
+	guildManagerOptions.args.recruitment.args.whorecruitment.args.classsettings.args.Monksearch = {
 		type = 'toggle',
         name = "Monk",
         desc = "Recruit Monks?",
@@ -554,7 +554,7 @@ options.args.recruitment.args.whorecruitment.args.classsettings = {
         order = 1
 	}
 	
-	options.args.recruitment.args.whorecruitment.args.classsettings.args.Paladinsearch = {
+	guildManagerOptions.args.recruitment.args.whorecruitment.args.classsettings.args.Paladinsearch = {
 		type = 'toggle',
         name = "Paladin",
         desc = "Recruit Paladins?",
@@ -574,7 +574,7 @@ options.args.recruitment.args.whorecruitment.args.classsettings = {
         order = 1
 	}
 	
-	options.args.recruitment.args.whorecruitment.args.classsettings.args.Priestsearch = {
+	guildManagerOptions.args.recruitment.args.whorecruitment.args.classsettings.args.Priestsearch = {
 		type = 'toggle',
         name = "Priest",
         desc = "Recruit Priests?",
@@ -594,7 +594,7 @@ options.args.recruitment.args.whorecruitment.args.classsettings = {
         order = 1
 	}
 	
-	options.args.recruitment.args.whorecruitment.args.classsettings.args.Roguesearch = {
+	guildManagerOptions.args.recruitment.args.whorecruitment.args.classsettings.args.Roguesearch = {
 		type = 'toggle',
         name = "Rogue",
         desc = "Recruit Rogues?",
@@ -614,7 +614,7 @@ options.args.recruitment.args.whorecruitment.args.classsettings = {
         order = 1
 	}
 	
-	options.args.recruitment.args.whorecruitment.args.classsettings.args.Shamansearch = {
+	guildManagerOptions.args.recruitment.args.whorecruitment.args.classsettings.args.Shamansearch = {
 		type = 'toggle',
         name = "Shaman",
         desc = "Recruit Shamans?",
@@ -634,7 +634,7 @@ options.args.recruitment.args.whorecruitment.args.classsettings = {
         order = 1
 	}
 	
-	options.args.recruitment.args.whorecruitment.args.classsettings.args.Warlocksearch = {
+	guildManagerOptions.args.recruitment.args.whorecruitment.args.classsettings.args.Warlocksearch = {
 		type = 'toggle',
         name = "Warlock",
         desc = "Recruit Warlocks?",
@@ -654,7 +654,7 @@ options.args.recruitment.args.whorecruitment.args.classsettings = {
         order = 1
 	}
 	
-	options.args.recruitment.args.whorecruitment.args.classsettings.args.Warriorsearch = {
+	guildManagerOptions.args.recruitment.args.whorecruitment.args.classsettings.args.Warriorsearch = {
 		type = 'toggle',
         name = "Warrior",
         desc = "Recruit Warriors?",
@@ -675,7 +675,7 @@ options.args.recruitment.args.whorecruitment.args.classsettings = {
 	}
 
 --* Recruitment InviteControls *--
-options.args.recruitment.args.invitecontrols = {
+guildManagerOptions.args.recruitment.args.invitecontrols = {
 	type = 'group',
     childGroups = "tab",
     name = "Invitation Control",
@@ -684,7 +684,7 @@ options.args.recruitment.args.invitecontrols = {
 	args = {}
 }
 
-options.args.recruitment.args.invitecontrols.args.dnilcontrols = {
+guildManagerOptions.args.recruitment.args.invitecontrols.args.dnilcontrols = {
 	type = 'execute',
     name = "Launch DNIL Controls?",
     desc = "WARNING: Over time the Do Not Invite List will get huge. If you MUST modify or purge the list be prepared for your UI to freeze for 30-60 seconds while the controls load.",
@@ -695,7 +695,7 @@ options.args.recruitment.args.invitecontrols.args.dnilcontrols = {
     order = 1
 }
 
-options.args.recruitment.args.invitecontrols.args.membercap = {
+guildManagerOptions.args.recruitment.args.invitecontrols.args.membercap = {
 	type = 'range',
     width = "normal",
     name = "Member Maximum",
@@ -719,7 +719,7 @@ options.args.recruitment.args.invitecontrols.args.membercap = {
     order = 2
 }
 
-options.args.recruitment.args.invitecontrols.args.whohalt = {
+guildManagerOptions.args.recruitment.args.invitecontrols.args.whohalt = {
 	type = 'execute',
     name = "Stop!",
     desc = "Emergency button that halts a Character Recruitment Cycle",
@@ -738,7 +738,7 @@ options.args.recruitment.args.invitecontrols.args.whohalt = {
     order = 3
 }
 
-options.args.recruitment.args.invitecontrols.args.welcomeannounce = {
+guildManagerOptions.args.recruitment.args.invitecontrols.args.welcomeannounce = {
 	type = "select",
     order = 4,
     name = "Announce New Members",
@@ -759,7 +759,7 @@ options.args.recruitment.args.invitecontrols.args.welcomeannounce = {
     end
 }
 
-options.args.recruitment.args.invitecontrols.args.welcomewhisp = {
+guildManagerOptions.args.recruitment.args.invitecontrols.args.welcomewhisp = {
 	type = 'input',
     multiline = true,
     width = "full",
@@ -782,7 +782,7 @@ options.args.recruitment.args.invitecontrols.args.welcomewhisp = {
     order = 5
 }
 
-options.args.recruitment.args.invitecontrols.args.declinewhisp = {
+guildManagerOptions.args.recruitment.args.invitecontrols.args.declinewhisp = {
 	type = 'input',
     multiline = true,
     width = "full",
@@ -805,7 +805,7 @@ options.args.recruitment.args.invitecontrols.args.declinewhisp = {
     order = 6
 }
 
-options.args.recruitment.args.invitecontrols.args.whisperinvite = {
+guildManagerOptions.args.recruitment.args.invitecontrols.args.whisperinvite = {
 	type = 'toggle',
 	name = "Invite on Whisper",
 	desc = 'Will Invite players to your guild who say "LF Guild" in a whisper message. (whisper is not case-sensetive) WARNING: Cannot be used with Whisper Only! NOTE: Be sure to include this in your Zone Message, Recruitment Message, and/or AFK/DND message so that applicants know what to say! Will NOT invite players on the Black List!',
@@ -825,7 +825,7 @@ options.args.recruitment.args.invitecontrols.args.whisperinvite = {
 	order = 7,
 }
 
-options.args.recruitment.args.invitecontrols.args.whisperonly = {
+guildManagerOptions.args.recruitment.args.invitecontrols.args.whisperonly = {
     type = 'toggle',
     name = "Whisper Only",
     desc = 'This will cause only a whisper to go out instead of a whisper and a guild invite. WARNING: Cannot be used with Invite on Whisper! NOTE: There is an issue where guilded members show up in the Who list as not guilded. Using this feature will result in guilded players getting your invite message.',
@@ -846,7 +846,7 @@ options.args.recruitment.args.invitecontrols.args.whisperonly = {
 }
 
 --* Pruning *--
-options.args.pruning = {
+guildManagerOptions.args.pruning = {
 	type = 'group',
     childGroups = "tab",
     name = "Pruning",
@@ -856,7 +856,7 @@ options.args.pruning = {
 }
 
 --* Pruning Manually *--
-options.args.pruning.args.manprune = {
+guildManagerOptions.args.pruning.args.manprune = {
 	type = 'execute',
     name = "Prune",
     desc = "Manually remove players from your guild",
@@ -871,7 +871,7 @@ options.args.pruning.args.manprune = {
 }
 
 --* Pruning Inactivity *--
-options.args.pruning.args.removeinactive = {
+guildManagerOptions.args.pruning.args.removeinactive = {
 	type = 'toggle',
     name = "Remove Inactive",
     desc = "Remove members based on inactivity",
@@ -885,7 +885,7 @@ options.args.pruning.args.removeinactive = {
 }
 
 --* Pruning Low Levels *--
-options.args.pruning.args.removelevels = {
+guildManagerOptions.args.pruning.args.removelevels = {
 	type = 'toggle',
     name = "Remove Low Levels",
     desc = "Remove Low Level Members",
@@ -899,7 +899,7 @@ options.args.pruning.args.removelevels = {
 }
 
 --* Pruning Automate *--
-options.args.pruning.args.automateprune = {
+guildManagerOptions.args.pruning.args.automateprune = {
 	type = 'toggle',
     name = "Automate",
     desc = "Prune members automatically & continuously",
@@ -913,7 +913,7 @@ options.args.pruning.args.automateprune = {
 }
 
 --* Pruning Days Offline *--
-options.args.pruning.args.daysinactive = {
+guildManagerOptions.args.pruning.args.daysinactive = {
 	type = 'range',
     width = "normal",
     name = "Days Offline",
@@ -935,7 +935,7 @@ options.args.pruning.args.daysinactive = {
 }
 
 --* Pruning Low Level Threshhold *--
-options.args.pruning.args.levelthreshold = {
+guildManagerOptions.args.pruning.args.levelthreshold = {
 	type = 'range',
     width = "normal",
     name = "Low Level",
@@ -957,7 +957,7 @@ options.args.pruning.args.levelthreshold = {
 }
 
 --* Pruning Announce Prunes *--
-options.args.pruning.args.pruneannounce = {
+guildManagerOptions.args.pruning.args.pruneannounce = {
 	type = "select",
     order = 7,
     name = "Announce Prunes",
@@ -972,7 +972,7 @@ options.args.pruning.args.pruneannounce = {
 }
 
 --* Pruning Launch Black List Controls? *--
-options.args.pruning.args.pruneannounce = {
+guildManagerOptions.args.pruning.args.pruneannounce = {
 	type = 'execute',
     name = "Launch Black List Controls?",
     desc = "WARNING: Over time the Black List can get huge. If you MUST modify or purge the list be prepared for your UI to freeze for 30-60 seconds while the controls load.",
@@ -984,7 +984,7 @@ options.args.pruning.args.pruneannounce = {
 }
 
 --* Pruning Launch Prune Exempt Controls? *--
-options.args.pruning.args.pruneexemptcontrols = {
+guildManagerOptions.args.pruning.args.pruneexemptcontrols = {
 	type = 'execute',
     name = "Launch Prune Exempt Controls?",
     desc = "WARNING: Over time the Prune Exemption List can get huge. If you MUST modify or purge the list be prepared for your UI to freeze for 30-60 seconds while the controls load.",
@@ -996,7 +996,7 @@ options.args.pruning.args.pruneexemptcontrols = {
 }
 
 --* Pruning Alts Exempt *--
-options.args.pruning.args.exemptalt = {
+guildManagerOptions.args.pruning.args.exemptalt = {
 	type = 'toggle',
     name = "Alts Exempt",
     desc = "Exempts Alts from pruning. MUST HAVE THE WORD 'ALT' in either their public or private note!",
@@ -1010,7 +1010,7 @@ options.args.pruning.args.exemptalt = {
 }
 
 --* Pruning Exempt Ranks *--
-options.args.pruning.args.exemptranks = {
+guildManagerOptions.args.pruning.args.exemptranks = {
 	type = 'toggle',
     name = "Exempt Ranks",
     desc = "Exempts selected Ranks from pruning",
@@ -1024,7 +1024,7 @@ options.args.pruning.args.exemptranks = {
 }
 
 --* Pruning Remove from DNIL *--
-options.args.pruning.args.removefromdnil = {
+guildManagerOptions.args.pruning.args.removefromdnil = {
 	type = 'toggle',
     name = "Remove from DNIL",
     desc = "Removes a kicked player from the Do Not Invite List so that they may be reinvited in future should they meet your recruitment criteria.",
@@ -1038,7 +1038,7 @@ options.args.pruning.args.removefromdnil = {
 }
 
 --* Pruning Ranktable *--
-options.args.pruning.args.ranktable = {
+guildManagerOptions.args.pruning.args.ranktable = {
 	type = 'group',
     childGroups = "tab",
     name = "Rank Exemption List",
@@ -1051,7 +1051,7 @@ options.args.pruning.args.ranktable = {
 	args = {}
 }
 	
-	options.args.pruning.args.ranktable.args.exemptrank1 = {
+	guildManagerOptions.args.pruning.args.ranktable.args.exemptrank1 = {
 		type = 'toggle',
 		name = function(info)
 				if GuildControlGetRankName(2)==nil then return "Rank 2" end
@@ -1073,7 +1073,7 @@ options.args.pruning.args.ranktable = {
 		order = 1,
 	}
 
-	options.args.pruning.args.ranktable.args.exemptrank2 = {
+	guildManagerOptions.args.pruning.args.ranktable.args.exemptrank2 = {
 		type = 'toggle',
 		name = function(info)
 				if GuildControlGetRankName(3)==nil then return "Rank 3" end
@@ -1095,7 +1095,7 @@ options.args.pruning.args.ranktable = {
 		order = 2
 	}
 
-	options.args.pruning.args.ranktable.args.exemptrank3 = {
+	guildManagerOptions.args.pruning.args.ranktable.args.exemptrank3 = {
 		type = 'toggle',
 		name = function(info)
 				if GuildControlGetRankName(4)==nil then return "Rank 4" end
@@ -1117,7 +1117,7 @@ options.args.pruning.args.ranktable = {
 		order = 3,
 	}
 
-	options.args.pruning.args.ranktable.args.exemptrank4 = {
+	guildManagerOptions.args.pruning.args.ranktable.args.exemptrank4 = {
 		type = 'toggle',
 		name = function(info)
 				if GuildControlGetRankName(5)==nil then return "Rank 5" end
@@ -1139,7 +1139,7 @@ options.args.pruning.args.ranktable = {
 		order = 4,
 	}
 
-	options.args.pruning.args.ranktable.args.exemptrank5 = {
+	guildManagerOptions.args.pruning.args.ranktable.args.exemptrank5 = {
 		type = 'toggle',
 		name = function(info)
 				if GuildControlGetRankName(6)==nil then return "Rank 6" end
@@ -1161,7 +1161,7 @@ options.args.pruning.args.ranktable = {
 		order = 5,
 	}
 
-	options.args.pruning.args.ranktable.args.exemptrank6 = {
+	guildManagerOptions.args.pruning.args.ranktable.args.exemptrank6 = {
 		type = 'toggle',
 		name = function(info)
 				if GuildControlGetRankName(7)==nil then return "Rank 7" end
@@ -1183,7 +1183,7 @@ options.args.pruning.args.ranktable = {
 		order = 6
 	}
 
-	options.args.pruning.args.ranktable.args.exemptrank7 = {
+	guildManagerOptions.args.pruning.args.ranktable.args.exemptrank7 = {
 		type = 'toggle',
 		name = function(info)
 				if GuildControlGetRankName(8)==nil then return "Rank 8" end
@@ -1205,7 +1205,7 @@ options.args.pruning.args.ranktable = {
 		order = 7
 	}
 
-	options.args.pruning.args.ranktable.args.exemptrank8 = {
+	guildManagerOptions.args.pruning.args.ranktable.args.exemptrank8 = {
 		type = 'toggle',
 		name = function(info)
 				if GuildControlGetRankName(9)==nil then return "Rank 9" end
@@ -1227,7 +1227,7 @@ options.args.pruning.args.ranktable = {
 		order = 8
 	}
 
-	options.args.pruning.args.ranktable.args.exemptrank9 = {
+	guildManagerOptions.args.pruning.args.ranktable.args.exemptrank9 = {
 		type = 'toggle',
 		name = function(info)
 				if GuildControlGetRankName(10)==nil then return "Rank 10" end
@@ -1250,7 +1250,7 @@ options.args.pruning.args.ranktable = {
 	}
 	
 --* Promotion *--
-options.args.promotion = {
+guildManagerOptions.args.promotion = {
 	type = 'group',
 	name = "Promotion",
 	desc = "Guild Promotion Settings",
@@ -1259,7 +1259,7 @@ options.args.promotion = {
 }
 
 --* Promotion Run Promotions *--
-options.args.promotion.args.manpromote = {
+guildManagerOptions.args.promotion.args.manpromote = {
 	type = 'execute',
 	name = "Run Promotions",
 	desc = "Manually runs the promoter WARNING: Whenever you move, add, or delete ranks be sure to update your promote settings! Not doing so may have unintended side effects!",
@@ -1275,7 +1275,7 @@ options.args.promotion.args.manpromote = {
 }
 
 --* Promotion Automate *--
-options.args.promotion.args.automatepromote = {
+guildManagerOptions.args.promotion.args.automatepromote = {
 	type = 'toggle',
 	name = "Automate",
 	confirm = true,
@@ -1290,7 +1290,7 @@ options.args.promotion.args.automatepromote = {
 }
 
 --* Promotion Demote Mode *--
-options.args.promotion.args.demotemode = {
+guildManagerOptions.args.promotion.args.demotemode = {
 	type = 'toggle',
 	name = "Demote Mode",
 	desc = "Demotes members who no longer qualify for the rank they hold based on the below settings.",
@@ -1304,7 +1304,7 @@ options.args.promotion.args.demotemode = {
 }
 
 --* Promotion Announce Promotions/Demotions *--
-options.args.promotion.args.promoteannounce = {
+guildManagerOptions.args.promotion.args.promoteannounce = {
 	type = "select",
 	order = 4,
 	name = "Announce Promotions/Demotions",
@@ -1319,7 +1319,7 @@ options.args.promotion.args.promoteannounce = {
 }
 
 --* Promotion Rank Promote Search *--
-options.args.promotion.args.rankpromotesearch = {
+guildManagerOptions.args.promotion.args.rankpromotesearch = {
 	type = 'group',
 	name = "Promote From Ranks",
 	desc = "Ranks that Guild Promoter will look at when finding qualified candidates",
@@ -1327,7 +1327,7 @@ options.args.promotion.args.rankpromotesearch = {
 	args = {}
 }
 
-	options.args.promotion.args.rankpromotesearch.args.rank1promotesearch = {
+	guildManagerOptions.args.promotion.args.rankpromotesearch.args.rank1promotesearch = {
 		type = 'toggle',
 		name = function(info)
 		if GuildControlGetRankName(2)==nil then return "Rank 2" end
@@ -1349,7 +1349,7 @@ options.args.promotion.args.rankpromotesearch = {
 		order = 1
 	}
 	
-	options.args.promotion.args.rankpromotesearch.args.rank2promotesearch = {
+	guildManagerOptions.args.promotion.args.rankpromotesearch.args.rank2promotesearch = {
 		type = 'toggle',
 		name = function(info)
 			if GuildControlGetRankName(3)==nil then return "Rank 3" end
@@ -1371,7 +1371,7 @@ options.args.promotion.args.rankpromotesearch = {
 		order = 2
 	}
 	
-	options.args.promotion.args.rankpromotesearch.args.rank3promotesearch = {
+	guildManagerOptions.args.promotion.args.rankpromotesearch.args.rank3promotesearch = {
 		type = 'toggle',
 		name = function(info)
 			if GuildControlGetRankName(4)==nil then return "Rank 4" end
@@ -1393,7 +1393,7 @@ options.args.promotion.args.rankpromotesearch = {
 		order = 3
 	}
 	
-	options.args.promotion.args.rankpromotesearch.args.rank4promotesearch = {
+	guildManagerOptions.args.promotion.args.rankpromotesearch.args.rank4promotesearch = {
 		type = 'toggle',
 		name = function(info)
 			if GuildControlGetRankName(5)==nil then return "Rank 5" end
@@ -1415,7 +1415,7 @@ options.args.promotion.args.rankpromotesearch = {
 		order = 4
 	}
 	
-	options.args.promotion.args.rankpromotesearch.args.rank5promotesearch = {
+	guildManagerOptions.args.promotion.args.rankpromotesearch.args.rank5promotesearch = {
 		type = 'toggle',
 		name = function(info)
 			if GuildControlGetRankName(6)==nil then return "Rank 6" end
@@ -1437,7 +1437,7 @@ options.args.promotion.args.rankpromotesearch = {
 		order = 5
 	}
 	
-	options.args.promotion.args.rankpromotesearch.args.rank6promotesearch = {
+	guildManagerOptions.args.promotion.args.rankpromotesearch.args.rank6promotesearch = {
 		type = 'toggle',
 		name = function(info)
 			if GuildControlGetRankName(7)==nil then return "Rank 7" end
@@ -1459,7 +1459,7 @@ options.args.promotion.args.rankpromotesearch = {
 		order = 6
 	}
 	
-	options.args.promotion.args.rankpromotesearch.args.rank7promotesearch = {
+	guildManagerOptions.args.promotion.args.rankpromotesearch.args.rank7promotesearch = {
 		type = 'toggle',
 		name = function(info)
 			if GuildControlGetRankName(8)==nil then return "Rank 8" end
@@ -1481,7 +1481,7 @@ options.args.promotion.args.rankpromotesearch = {
 		order = 7
 	}
 	
-	options.args.promotion.args.rankpromotesearch.args.rank8promotesearch = {
+	guildManagerOptions.args.promotion.args.rankpromotesearch.args.rank8promotesearch = {
 		type = 'toggle',
 		name = function(info)
 			if GuildControlGetRankName(9)==nil then return "Rank 9" end
@@ -1503,7 +1503,7 @@ options.args.promotion.args.rankpromotesearch = {
 		order = 8
 	}
 	
-	options.args.promotion.args.rankpromotesearch.args.rank9promotesearch = {
+	guildManagerOptions.args.promotion.args.rankpromotesearch.args.rank9promotesearch = {
 		type = 'toggle',
 		name = function(info)
 			if GuildControlGetRankName(10)==nil then return "Rank 10" end
@@ -1526,7 +1526,7 @@ options.args.promotion.args.rankpromotesearch = {
 	}
 	
 --* Promotion Rank Promote Search *--
-options.args.promotion.args.rankpromoteplacelevel = {
+guildManagerOptions.args.promotion.args.rankpromoteplacelevel = {
 	type = 'group',
 	name = "Promote To By Level",
 	desc = "Ranks that Guild Promoter will look at when placing qualified candidates",
@@ -1534,7 +1534,7 @@ options.args.promotion.args.rankpromoteplacelevel = {
 	args = {}
 }
 
-	options.args.promotion.args.rankpromoteplacelevel.args.rank1promote = {
+	guildManagerOptions.args.promotion.args.rankpromoteplacelevel.args.rank1promote = {
 		type = 'toggle',
 		name = function(info)
 			if GuildControlGetRankName(2)==nil then return "Rank 2" end
@@ -1556,7 +1556,7 @@ options.args.promotion.args.rankpromoteplacelevel = {
 		order = 3
 	}
 	
-	options.args.promotion.args.rankpromoteplacelevel.args.rank1level = {
+	guildManagerOptions.args.promotion.args.rankpromoteplacelevel.args.rank1level = {
 		type = 'range',
 		width = "normal",
 		max = 111,
@@ -1583,7 +1583,7 @@ options.args.promotion.args.rankpromoteplacelevel = {
 		order = 4
 	}
 	
-	options.args.promotion.args.rankpromoteplacelevel.args.rank2promote = {
+	guildManagerOptions.args.promotion.args.rankpromoteplacelevel.args.rank2promote = {
 		type = 'toggle',
 		name = function(info)
 			if GuildControlGetRankName(3)==nil then return "Rank 3" end
@@ -1605,7 +1605,7 @@ options.args.promotion.args.rankpromoteplacelevel = {
 		order = 5
 	}
 	
-	options.args.promotion.args.rankpromoteplacelevel.args.rank2level = {
+	guildManagerOptions.args.promotion.args.rankpromoteplacelevel.args.rank2level = {
 		type = 'range',
 		width = "normal",
 		max = 111,
@@ -1632,7 +1632,7 @@ options.args.promotion.args.rankpromoteplacelevel = {
 		order = 6
 	}
 	
-	options.args.promotion.args.rankpromoteplacelevel.args.rank3promote = {
+	guildManagerOptions.args.promotion.args.rankpromoteplacelevel.args.rank3promote = {
 		type = 'toggle',
 		name = function(info)
 			if GuildControlGetRankName(4)==nil then return "Rank 4" end
@@ -1654,7 +1654,7 @@ options.args.promotion.args.rankpromoteplacelevel = {
 		order = 7
 	}
 	
-	options.args.promotion.args.rankpromoteplacelevel.args.rank3level = {
+	guildManagerOptions.args.promotion.args.rankpromoteplacelevel.args.rank3level = {
 		type = 'range',
 		width = "normal",
 		max = 111,
@@ -1681,7 +1681,7 @@ options.args.promotion.args.rankpromoteplacelevel = {
 		order = 8
 	}
 	
-	options.args.promotion.args.rankpromoteplacelevel.args.rank4promote = {
+	guildManagerOptions.args.promotion.args.rankpromoteplacelevel.args.rank4promote = {
 		type = 'toggle',
 		name = function(info)
 			if GuildControlGetRankName(5)==nil then return "Rank 5" end
@@ -1703,7 +1703,7 @@ options.args.promotion.args.rankpromoteplacelevel = {
 		order = 9
 	}
 	
-	options.args.promotion.args.rankpromoteplacelevel.args.rank4level = {
+	guildManagerOptions.args.promotion.args.rankpromoteplacelevel.args.rank4level = {
 		type = 'range',
 		width = "normal",
 		max = 111,
@@ -1730,7 +1730,7 @@ options.args.promotion.args.rankpromoteplacelevel = {
 		order = 10
 	}
 	
-	options.args.promotion.args.rankpromoteplacelevel.args.rank5promote = {
+	guildManagerOptions.args.promotion.args.rankpromoteplacelevel.args.rank5promote = {
 		type = 'toggle',
 		name = function(info)
 			if GuildControlGetRankName(6)==nil then return "Rank 6" end
@@ -1752,7 +1752,7 @@ options.args.promotion.args.rankpromoteplacelevel = {
 		order = 11
 	}
 	
-	options.args.promotion.args.rankpromoteplacelevel.args.rank5level = {
+	guildManagerOptions.args.promotion.args.rankpromoteplacelevel.args.rank5level = {
 		type = 'range',
 		width = "normal",
 		max = 111,
@@ -1779,7 +1779,7 @@ options.args.promotion.args.rankpromoteplacelevel = {
 		order = 12
 	}
 	
-	options.args.promotion.args.rankpromoteplacelevel.args.rank6promote = {
+	guildManagerOptions.args.promotion.args.rankpromoteplacelevel.args.rank6promote = {
 		type = 'toggle',
 		name = function(info)
 			if GuildControlGetRankName(7)==nil then return "Rank 7" end
@@ -1801,7 +1801,7 @@ options.args.promotion.args.rankpromoteplacelevel = {
 		order = 13
 	}
 	
-	options.args.promotion.args.rankpromoteplacelevel.args.rank6level = {
+	guildManagerOptions.args.promotion.args.rankpromoteplacelevel.args.rank6level = {
 		type = 'range',
 		width = "normal",
 		max = 111,
@@ -1828,7 +1828,7 @@ options.args.promotion.args.rankpromoteplacelevel = {
 		order = 14
 	}
 	
-	options.args.promotion.args.rankpromoteplacelevel.args.rank7promote = {
+	guildManagerOptions.args.promotion.args.rankpromoteplacelevel.args.rank7promote = {
 		type = 'toggle',
 		name = function(info)
 			if GuildControlGetRankName(8)==nil then return "Rank 8" end
@@ -1850,7 +1850,7 @@ options.args.promotion.args.rankpromoteplacelevel = {
 		order = 15
 	}
 	
-	options.args.promotion.args.rankpromoteplacelevel.args.rank7level = {
+	guildManagerOptions.args.promotion.args.rankpromoteplacelevel.args.rank7level = {
 		type = 'range',
 		width = "normal",
 		max = 111,
@@ -1877,7 +1877,7 @@ options.args.promotion.args.rankpromoteplacelevel = {
 		order = 16
 	}
 	
-	options.args.promotion.args.rankpromoteplacelevel.args.rank8promote = {
+	guildManagerOptions.args.promotion.args.rankpromoteplacelevel.args.rank8promote = {
 		type = 'toggle',
 		name = function(info)
 			if GuildControlGetRankName(9)==nil then return "Rank 9" end
@@ -1899,7 +1899,7 @@ options.args.promotion.args.rankpromoteplacelevel = {
 		order = 17
 	}
 	
-	options.args.promotion.args.rankpromoteplacelevel.args.rank8level = {
+	guildManagerOptions.args.promotion.args.rankpromoteplacelevel.args.rank8level = {
 		type = 'range',
 		max = 111,
 		min = 1,
@@ -1926,7 +1926,7 @@ options.args.promotion.args.rankpromoteplacelevel = {
 	}
 	
 --* Promotion Player Exemption List *--
-options.args.promotion.args.demoteexemptlist = {
+guildManagerOptions.args.promotion.args.demoteexemptlist = {
 	type = 'group',
 	childGroups = "tab",
 	name = "Player Exemption List",
@@ -1939,7 +1939,7 @@ options.args.promotion.args.demoteexemptlist = {
 	args = {}
 }
 
-options.args.promotion.args.demoteexemptlist.args.demoteexemptcontrols = {
+guildManagerOptions.args.promotion.args.demoteexemptlist.args.demoteexemptcontrols = {
 	type = 'execute',
 	name = "Launch Demote Exempt Controls?",
 	desc = "WARNING: Over time the Demote Exemption List can get huge. If you MUST modify or purge the list be prepared for your UI to freeze for 30-60 seconds while the controls load.",
@@ -1951,7 +1951,7 @@ options.args.promotion.args.demoteexemptlist.args.demoteexemptcontrols = {
 }
 
 --* Announcments *--
-options.args.announcments = {
+guildManagerOptions.args.announcments = {
 	type = 'group',
 	name = "Announcements",
 	desc = "Guild Announcment Settings",
@@ -1959,7 +1959,7 @@ options.args.announcments = {
 	args = {}
 }
 
-options.args.announcments.args.annoucementstats = {
+guildManagerOptions.args.announcments.args.annoucementstats = {
 	type = 'execute',
 	name = "Annoucement Stats",
 	desc = "Prints which message was spammed last and when it was spammed.",
@@ -1973,7 +1973,7 @@ options.args.announcments.args.annoucementstats = {
 	order = 1
 }
 
-options.args.announcments.args.annoucementskip = {
+guildManagerOptions.args.announcments.args.annoucementskip = {
 	type = 'execute',
 	name = "Skip Announcement",
 	desc = "Skips the next upcoming announcement and loads the one after that.",
@@ -1991,7 +1991,7 @@ options.args.announcments.args.annoucementskip = {
 	order = 2
 }
 
-options.args.announcments.args.announcmentoverride = {
+guildManagerOptions.args.announcments.args.announcmentoverride = {
 	type = 'execute',
 	name = "Announce Now",
 	desc = "Overrides the timer and broadcasts the next upcoming announcment.",
@@ -2005,7 +2005,7 @@ options.args.announcments.args.announcmentoverride = {
 	order = 3
 }
 
-options.args.announcments.args.announcement1 = {
+guildManagerOptions.args.announcments.args.announcement1 = {
 	type = 'input',
 	multiline = true,
 	width = "full",
@@ -2021,7 +2021,7 @@ options.args.announcments.args.announcement1 = {
 	order = 4
 }
 
-options.args.announcments.args.announcementtimer1 = {
+guildManagerOptions.args.announcments.args.announcementtimer1 = {
 	type = 'range',
 	name = "Annoucement 1 Timer",
 	desc = "Set the amount of time between the PREVIOUS message and THIS message.",
@@ -2037,7 +2037,7 @@ options.args.announcments.args.announcementtimer1 = {
 	order = 5
 }
 
-options.args.announcments.args.announcementto1 = {
+guildManagerOptions.args.announcments.args.announcementto1 = {
 	type = "select",
 	order = 6,
 	name = "Announce to Officer/Guild 1",
@@ -2049,10 +2049,9 @@ options.args.announcments.args.announcementto1 = {
 	set = function(info, newValue)
 		GuildManager.db.profile.announcementto1 = newValue
 	end,
-	}
 }
 
-options.args.announcments.args.announcementborder1 = {
+guildManagerOptions.args.announcments.args.announcementborder1 = {
 	type = "select",
 	order = 7,
 	name = "Announce Border 1",
@@ -2066,7 +2065,7 @@ options.args.announcments.args.announcementborder1 = {
 	end
 }
 	
-options.args.announcments.args.announcement2 = {
+guildManagerOptions.args.announcments.args.announcement2 = {
 	type = 'input',
     multiline = true,
     width = "full",
@@ -2082,7 +2081,7 @@ options.args.announcments.args.announcement2 = {
 	order = 8
 }
 
-options.args.announcments.args.announcementtimer2 = {
+guildManagerOptions.args.announcments.args.announcementtimer2 = {
 	type = 'range',
 	name = "Annoucement 2 Timer",
 	desc = "Set the amount of time between the PREVIOUS message and THIS message.",
@@ -2098,7 +2097,7 @@ options.args.announcments.args.announcementtimer2 = {
 	order = 9
 }
 
-options.args.announcments.args.announcementto2 = {
+guildManagerOptions.args.announcments.args.announcementto2 = {
 	type = "select",
 	order = 10,
 	name = "Announce to Officer/Guild 2",
@@ -2112,7 +2111,7 @@ options.args.announcments.args.announcementto2 = {
 	end
 }
 
-options.args.announcments.args.announcementborder2 = {
+guildManagerOptions.args.announcments.args.announcementborder2 = {
 	type = "select",
 	order = 11,
 	name = "Announce Border 2",
@@ -2126,7 +2125,7 @@ options.args.announcments.args.announcementborder2 = {
 	end
 }
 
-options.args.announcments.args.announcement3 = {
+guildManagerOptions.args.announcments.args.announcement3 = {
 	type = 'input',
 	multiline = true,
 	width = "full",
@@ -2142,7 +2141,7 @@ options.args.announcments.args.announcement3 = {
 	order = 12
 }
 
-options.args.announcments.args.announcementtimer3 = {
+guildManagerOptions.args.announcments.args.announcementtimer3 = {
 	type = 'range',
 	name = "Annoucement 3 Timer",
 	desc = "Set the amount of time between the PREVIOUS message and THIS message.",
@@ -2158,7 +2157,7 @@ options.args.announcments.args.announcementtimer3 = {
 	order = 13
 }
 
-options.args.announcments.args.announcementto3 = {
+guildManagerOptions.args.announcments.args.announcementto3 = {
 	type = "select",
 	order = 14,
 	name = "Announce to Officer/Guild 3",
@@ -2172,7 +2171,7 @@ options.args.announcments.args.announcementto3 = {
 	end
 }
 
-options.args.announcments.args.announcementborder3 = {
+guildManagerOptions.args.announcments.args.announcementborder3 = {
 	type = "select",
 	order = 15,
 	name = "Announce Border 3",
@@ -2186,7 +2185,7 @@ options.args.announcments.args.announcementborder3 = {
 	end
 }
 
-options.args.announcments.args.announcement4 = {
+guildManagerOptions.args.announcments.args.announcement4 = {
 	type = 'input',
     multiline = true,
     width = "full",
@@ -2202,7 +2201,7 @@ options.args.announcments.args.announcement4 = {
 	order = 16
 }
 
-options.args.announcments.args.announcementtimer4 = {
+guildManagerOptions.args.announcments.args.announcementtimer4 = {
 	type = 'range',
 	name = "Annoucement 4 Timer",
 	desc = "Set the amount of time between the PREVIOUS message and THIS message.",
@@ -2218,7 +2217,7 @@ options.args.announcments.args.announcementtimer4 = {
 	order = 17
 }
 
-options.args.announcments.args.announcementto4 = {
+guildManagerOptions.args.announcments.args.announcementto4 = {
 	type = "select",
 	order = 18,
 	name = "Announce to Officer/Guild 4",
@@ -2232,7 +2231,7 @@ options.args.announcments.args.announcementto4 = {
 	end
 }
 
-options.args.announcments.args.announcementborder4 = {
+guildManagerOptions.args.announcments.args.announcementborder4 = {
 	type = "select",
 	order = 19,
 	name = "Announce Border 4",
@@ -2246,7 +2245,7 @@ options.args.announcments.args.announcementborder4 = {
 	end
 }
 
-options.args.announcments.args.announcement5 = {
+guildManagerOptions.args.announcments.args.announcement5 = {
 	type = 'input',
     multiline = true,
     width = "full",
@@ -2262,7 +2261,7 @@ options.args.announcments.args.announcement5 = {
 	order = 20
 }
 
-options.args.announcments.args.announcementtimer5 = {
+guildManagerOptions.args.announcments.args.announcementtimer5 = {
 	type = 'range',
 	name = "Annoucement 5 Timer",
 	desc = "Set the amount of time between the PREVIOUS message and THIS message.",
@@ -2278,7 +2277,7 @@ options.args.announcments.args.announcementtimer5 = {
 	order = 21
 }
 
-options.args.announcments.args.announcementto5 = {
+guildManagerOptions.args.announcments.args.announcementto5 = {
 	type = "select",
 	order = 22,
 	name = "Announce to Officer/Guild 5",
@@ -2292,7 +2291,7 @@ options.args.announcments.args.announcementto5 = {
 	end
 }
 
-options.args.announcments.args.announcementborder5 = {
+guildManagerOptions.args.announcments.args.announcementborder5 = {
 	type = "select",
 	order = 23,
 	name = "Announce Border 5",

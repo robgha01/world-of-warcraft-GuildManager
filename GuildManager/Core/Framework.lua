@@ -10,8 +10,7 @@ local function SetLayout(this)
     t1:SetJustifyV("TOP")
     t1:SetPoint("TOPLEFT", 16, -16)
     t1:SetText(this.name)
-
-
+	
     local t2 = this:CreateFontString(nil, "ARTWORK")
     t2:SetFontObject(GameFontHighlightSmall)
     t2:SetJustifyH("LEFT") 
@@ -35,7 +34,7 @@ local function SetLayout(this)
 end
 
 function GuildManager:DewOptions()
-	dewdrop:Open('dummy', 'children', function() dewdrop:FeedAceOptionsTable(options) end, 'cursorX', true, 'cursorY', true)
+	dewdrop:Open('dummy', 'children', function() dewdrop:FeedAceOptionsTable(guildManagerOptions) end, 'cursorX', true, 'cursorY', true)
 end
 
 local function CreateUIOptionsFrame(addon) 

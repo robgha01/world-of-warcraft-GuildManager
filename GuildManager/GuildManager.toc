@@ -19,6 +19,7 @@
 #@no-lib-strip@
 embeds.xml
 #@end-no-lib-strip@
+GuildManager.lua
 Core\Options.lua
 Core\Framework.lua
 Core\Commands.lua
@@ -32,4 +33,3 @@ Components\Pruning.lua
 Components\Promotion.lua
 Components\Announcements.lua
 Components\Recruitment.lua
-GuildManager.lua
