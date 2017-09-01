@@ -3,7 +3,7 @@
 
 --*ANNOUNCEMENTS*--
 function GuildManager:RunAnnouncemnts()
-    if AnnouncementsActivated~=1 and ValidMessages~=1 then--Announcements
+    if AnnouncementsActivated~=1 and guildManagerValidMessages~=1 then--Announcements
         GuildManager:AnnouncementsActivate()
     else
         GuildManager:NextAnnouncementValid()
@@ -12,14 +12,14 @@ end
 --Load & Reload Functions--
 function GuildManager:AnnouncementsActivate()
     GuildManager:AnnouncementsFindValid()
-    if (GuildManager.db.profile.lastannounced==0 or GuildManager.db.profile.announcenext==0) and ValidMessages==1 then
+    if (GuildManager.db.profile.lastannounced==0 or GuildManager.db.profile.announcenext==0) and guildManagerValidMessages==1 then
         GuildManager:DetermineNextAnnouncement()
         GuildManager:AnnouncementsActivate()
-    elseif (GuildManager.db.profile.lastannounced==0 or GuildManager.db.profile.announcenext==0) and ValidMessages==0 then
+    elseif (GuildManager.db.profile.lastannounced==0 or GuildManager.db.profile.announcenext==0) and guildManagerValidMessages==0 then
         AnnouncementsActivated=0
     else
     end
-    if GuildManager.db.profile.lastannounced~=0 and GuildManager.db.profile.announcenext~=0 and ValidMessages==1 then
+    if GuildManager.db.profile.lastannounced~=0 and GuildManager.db.profile.announcenext~=0 and guildManagerValidMessages==1 then
         AnnouncementsActivated=1
         GuildManager:NextAnnouncementValid()
     else
@@ -37,7 +37,7 @@ function GuildManager:NextAnnouncementValid()
             GuildManager:CheckTimeAnnouncement()
         else
             GuildManager:AnnouncementsFindValid()
-            if ValidMessages==1 then
+            if guildManagerValidMessages==1 then
                 GuildManager:DetermineNextAnnouncement()
             else
                 AnnouncementsActivated=0
@@ -53,7 +53,7 @@ function GuildManager:NextAnnouncementValid()
             GuildManager:CheckTimeAnnouncement()
         else
             GuildManager:AnnouncementsFindValid()
-            if ValidMessages==1 then
+            if guildManagerValidMessages==1 then
                 GuildManager:DetermineNextAnnouncement()
             else
                 AnnouncementsActivated=0
@@ -69,7 +69,7 @@ function GuildManager:NextAnnouncementValid()
             GuildManager:CheckTimeAnnouncement()
         else
             GuildManager:AnnouncementsFindValid()
-            if ValidMessages==1 then
+            if guildManagerValidMessages==1 then
                 GuildManager:DetermineNextAnnouncement()
             else
                 AnnouncementsActivated=0
@@ -85,7 +85,7 @@ function GuildManager:NextAnnouncementValid()
             GuildManager:CheckTimeAnnouncement()
         else
             GuildManager:AnnouncementsFindValid()
-            if ValidMessages==1 then
+            if guildManagerValidMessages==1 then
                 GuildManager:DetermineNextAnnouncement()
             else
                 AnnouncementsActivated=0
@@ -101,7 +101,7 @@ function GuildManager:NextAnnouncementValid()
             GuildManager:CheckTimeAnnouncement()
         else
             GuildManager:AnnouncementsFindValid()
-            if ValidMessages==1 then
+            if guildManagerValidMessages==1 then
                 GuildManager:DetermineNextAnnouncement()
             else
                 AnnouncementsActivated=0
@@ -137,9 +137,9 @@ function GuildManager:AnnouncementsFindValid()
         Announcement5Valid=0
     end
     if Announcement1Valid==0 and Announcement2Valid==0 and Announcement3Valid==0 and Announcement4Valid==0 and Announcement5Valid==0 then
-        ValidMessages=0
+        guildManagerValidMessages=0
     else
-        ValidMessages=1
+        guildManagerValidMessages=1
     end
 end
 
@@ -191,7 +191,7 @@ function GuildManager:DetermineNextAnnouncement()
     elseif GuildManager.db.profile.lastannounced==4 and Announcement5Valid==0 then
         GuildManager.db.profile.lastannounced=5
         reachedendofcheck=1
-        if GuildManager.db.profile.lastannounced==5 and reachedendofcheck==1 and ValidMessages==1 then
+        if GuildManager.db.profile.lastannounced==5 and reachedendofcheck==1 and guildManagerValidMessages==1 then
             GuildManager:DetermineNextAnnouncement()
         end
     end

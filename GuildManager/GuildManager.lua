@@ -140,6 +140,7 @@ function GuildManager:OnInitialize()
         GuildManager.db.profile.version = GuildManager.version
     end
     active = GuildManager.db.profile.active
+	guildManagerValidMessages=0;
 end
 
 function GuildManager:OnEnable()

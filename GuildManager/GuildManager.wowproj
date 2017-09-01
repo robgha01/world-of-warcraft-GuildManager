@@ -32,7 +32,10 @@
     <Content Include="Core\Options.lua">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="Dev\OrginalAuthorCode.lua">
+    <Content Include="OrginalAuthorCode\6.2.3\GuildManager.lua">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="OrginalAuthorCode\7.1.0\GuildManager.lua">
       <SubType>Code</SubType>
     </Content>
     <Content Include="Documentation.txt" />
@@ -252,7 +255,7 @@
     <Folder Include="Core" />
     <Folder Include="lang" />
     <Folder Include="Frames" />
-    <Folder Include="Dev" />
+    <Folder Include="OrginalAuthorCode" />
     <Folder Include="Libs\" />
     <Folder Include="Libs\AceAddon-3.0\" />
     <Folder Include="Libs\AceBucket-3.0\" />
@@ -274,6 +277,8 @@
     <Folder Include="Libs\AceTimer-3.0\" />
     <Folder Include="Libs\CallbackHandler-1.0\" />
     <Folder Include="Libs\LibStub\" />
+    <Folder Include="OrginalAuthorCode\7.1.0" />
+    <Folder Include="OrginalAuthorCode\6.2.3" />
   </ItemGroup>
   <Import Project="$(DevEnvDir)\Extensions\Tools\MSBuild\AddonStudio\Wow\3.0\WowAddonStudio.targets" />
   <!--

@@ -1964,7 +1964,7 @@ guildManagerOptions.args.announcments.args.annoucementstats = {
 	name = "Annoucement Stats",
 	desc = "Prints which message was spammed last and when it was spammed.",
 	func = 	function()
-		if ValidMessages==1 then
+		if guildManagerValidMessages==1 then
 			GuildManager:Print(strjoin(" ","A Guild Annoucnement was made",(GuildManager:GetTime()-GuildManager.db.profile.lastanntime),"minutes ago. Guild Announcement",GuildManager.db.profile.announcenext,"is due to print in",(GuildManager.db.profile.lastanntime+GuildManager.db.profile.nextannouncetime)-GuildManager:GetTime(),"minutes."))
 		else
 			GuildManager:Print("There Are No Valid Messages!")
@@ -1978,7 +1978,7 @@ guildManagerOptions.args.announcments.args.annoucementskip = {
 	name = "Skip Announcement",
 	desc = "Skips the next upcoming announcement and loads the one after that.",
 	func = 	function()
-		if ValidMessages==1 then
+		if guildManagerValidMessages==1 then
 			GuildManager:Print(strjoin(" ","Skipping Guild Announcement",GuildManager.db.profile.announcenext))
 			announcementskip=1
 			GuildManager:LoadNextAnnouncement()
@@ -1996,7 +1996,7 @@ guildManagerOptions.args.announcments.args.announcmentoverride = {
 	name = "Announce Now",
 	desc = "Overrides the timer and broadcasts the next upcoming announcment.",
 	func = 	function()
-		if ValidMessages==1 then
+		if guildManagerValidMessages==1 then
 			GuildManager:ExecuteAnnouncement()
 		else
 			GuildManager:Print("There Are No Valid Messages!")
