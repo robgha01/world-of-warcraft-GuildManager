@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" DefaultTargets="Deploy" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
-    <Name>Guild_Master</Name>
+    <Name>Guild Manager</Name>
     <ProjectGuid>2bfa1542-4bed-4955-a24f-3ff09146bdf1</ProjectGuid>
     <AssemblyName>Guild Master</AssemblyName>
     <RootNamespace>Guild Master</RootNamespace>
