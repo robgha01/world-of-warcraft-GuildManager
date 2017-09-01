@@ -54,6 +54,9 @@
     <Content Include="Guild Manager.toc">
       <SubType>TableOfContents</SubType>
     </Content>
+    <Content Include="GuildManager.toc">
+      <SubType>TableOfContents</SubType>
+    </Content>
     <Content Include="GuildManager.txt">
       <SubType>TableOfContents</SubType>
     </Content>
