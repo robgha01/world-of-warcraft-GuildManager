@@ -23,7 +23,7 @@
     <Content Include="Components\Recruitment.lua">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="Copy of Code1.lua">
+    <Content Include="Dev\OrginalAuthorCode.lua">
       <SubType>Code</SubType>
     </Content>
     <Content Include="Core\Commands.lua">
@@ -275,6 +275,7 @@
     <Folder Include="Core" />
     <Folder Include="lang" />
     <Folder Include="Frames" />
+    <Folder Include="Dev" />
   </ItemGroup>
   <Import Project="$(DevEnvDir)\Extensions\Tools\MSBuild\AddonStudio\Wow\3.0\WowAddonStudio.targets" />
   <!--
