@@ -118,7 +118,7 @@ local countPromotions = 0;
 
 function GuildManager:DoGMPromoteLevel(totali,i,name,rankn,ranki,level)
 	--print(strjoin(" ","Doing-PromoteLevel:", "at index:", i, "for", name, "rankn:", rankn, "ranki:", ranki, "level:", level ))
-	print(strjoin(" ","Doing-PromoteLevel:", i, "of", totali))
+	--print(strjoin(" ","Doing-PromoteLevel:", i, "of", totali))
 	countPromotions = countPromotions + 1;
 	if (GuildManager.db.profile.rank1promotesearch==true and ranki+1==2) or (GuildManager.db.profile.rank2promotesearch==true and ranki+1==3) or (GuildManager.db.profile.rank3promotesearch==true and ranki+1==4) or (GuildManager.db.profile.rank4promotesearch==true and ranki+1==5) or (GuildManager.db.profile.rank5promotesearch==true and ranki+1==6) or (GuildManager.db.profile.rank6promotesearch==true and ranki+1==7) or (GuildManager.db.profile.rank7promotesearch==true and ranki+1==8) or (GuildManager.db.profile.rank8promotesearch==true and ranki+1==9) or (GuildManager.db.profile.rank9promotesearch==true and ranki+1==10) then
 		if GuildManager.db.profile.rank1promote==true and level/GuildManager.db.profile.rank1level>=1 and IsGuildRankAssignmentAllowed(ranki,2)==true then

@@ -11,7 +11,7 @@ function GuildManager:RunAnnouncemnts()
 end
 --Load & Reload Functions--
 function GuildManager:AnnouncementsActivate()
-    GuildManager:AnnouncementsFindValid()
+	GuildManager:AnnouncementsFindValid()
     if (GuildManager.db.profile.lastannounced==0 or GuildManager.db.profile.announcenext==0) and guildManagerValidMessages==1 then
         GuildManager:DetermineNextAnnouncement()
         GuildManager:AnnouncementsActivate()

@@ -165,6 +165,7 @@ function GuildManager:TurnSelfOn()
         GuildManager:Print("Loaded and Fully Operational! Type /guildmanager to manage your options. NOTE: You will need to create a macro or modify your macros by adding '/run GuildManager:InviteAction()' to each one. This is the ONLY way to get Toon Recruitment to work. See documentation on Curse or in the GuildManager addon folder for additional details.")
     end
     GuildManager:Cleantables()
+	--GuildManager:AnnouncementsActivate()
 end
 
 function GuildManager:ReplaceGM()
