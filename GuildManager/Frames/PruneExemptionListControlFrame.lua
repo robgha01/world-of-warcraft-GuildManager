@@ -1,6 +1,8 @@
 -- Author      : Robert
 -- Create Date : 9/1/2017 12:34:14 PM
 
+local GUI = LibStub("AceGUI-3.0")
+
 --Table Sorter--
 function pairsByKeysPruneExempt(GMPruneExemptt)
 	local GMPruneExempttsort = {}

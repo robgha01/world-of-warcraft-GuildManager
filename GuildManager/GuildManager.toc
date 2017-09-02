@@ -19,10 +19,7 @@
 #@no-lib-strip@
 embeds.xml
 #@end-no-lib-strip@
-GuildManager.lua
-Core\Options.lua
-Core\Framework.lua
-Core\Commands.lua
+Core\Bootstrapper.lua
 Frames\BlackListControlFrame.lua
 Frames\DemoteExemptionListControlFrame.lua
 Frames\DoNotInviteListControlFrame.lua
@@ -31,5 +28,9 @@ Frames\PruneExemptionListControlFrame.lua
 Components\EasyGuildInvite.lua
 Components\Pruning.lua
 Components\Promotion.lua
-Components\Announcements.lua
 Components\Recruitment.lua
+Components\Announcements.lua
+Core\Options.lua
+Core\Framework.lua
+Core\Commands.lua
+GuildManager.lua

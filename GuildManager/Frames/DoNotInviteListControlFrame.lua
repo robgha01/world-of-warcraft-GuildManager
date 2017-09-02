@@ -1,6 +1,8 @@
 -- Author      : Robert
 -- Create Date : 9/1/2017 12:32:44 PM
 
+local GUI = LibStub("AceGUI-3.0")
+
 --Table Sorter--
 function pairsByKeysDNI(GMDNIt)
 	local GMDNItsort = {}

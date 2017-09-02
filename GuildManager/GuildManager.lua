@@ -1,8 +1,3 @@
-GuildManager = LibStub("AceAddon-3.0"):NewAddon("GuildManager", "AceConsole-3.0", "AceEvent-3.0", "AceComm-3.0", "AceTimer-3.0", "AceSerializer-3.0", "AceHook-3.0");
-GuildManager:RegisterChatCommand("GuildManager", ChatCmd)
-GuildManager:RegisterChatCommand("gm", ChatCmd)
-local GUI = LibStub("AceGUI-3.0")
-
 --Setup functions--
 function GuildManager:GetGuildName()
 	local guildName, guildRankName, guildRankIndex = GetGuildInfo("player")
@@ -140,7 +135,7 @@ function GuildManager:OnInitialize()
         GuildManager.db.profile.version = GuildManager.version
     end
     active = GuildManager.db.profile.active
-	guildManagerValidMessages=0;
+	GuildManager:RegisterChatCmd()
 end
 
 function GuildManager:OnEnable()

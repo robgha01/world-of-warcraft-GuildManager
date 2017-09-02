@@ -9,5 +9,7 @@ local function ChatCmd(input)
 	end
 end
 
-GuildManager:RegisterChatCommand("GuildManager", ChatCmd)
-GuildManager:RegisterChatCommand("gm", ChatCmd)
+function GuildManager:RegisterChatCmd()
+	GuildManager:RegisterChatCommand("GuildManager", ChatCmd)
+	GuildManager:RegisterChatCommand("gm", ChatCmd)
+end

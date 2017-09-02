@@ -29,6 +29,9 @@
     <Content Include="Core\Framework.lua">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Core\Bootstrapper.lua">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Core\Options.lua">
       <SubType>Code</SubType>
     </Content>

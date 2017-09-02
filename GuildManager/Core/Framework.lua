@@ -60,6 +60,7 @@ function GuildManager:tremovebyval(tab, val)
 end
 
 function GuildManager:Cleantables()
+	GuildManager:Print("Cleaning guild manager tables...")
     uncleanGMIQt = GuildManager.db.profile.GMIQt
     cleanGMIQt = {}
     table.foreach(uncleanGMIQt,function(k,v)
