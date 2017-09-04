@@ -1525,7 +1525,7 @@ guildManagerOptions.args.promotion.args.rankpromotesearch = {
 		order = 9
 	}
 	
---* Promotion Rank Promote Search *--
+--* Promote To By Level *--
 guildManagerOptions.args.promotion.args.rankpromoteplacelevel = {
 	type = 'group',
 	name = "Promote To By Level",
